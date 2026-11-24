@@ -1,0 +1,36 @@
+name: Lint and Validate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-shell:
+    name: Lint Shell Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          ignore_paths: >-
+            .git
+
+  lint-markdown:
+    name: Lint Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate Markdown files exist
+        run: |
+          test -f README.md
+          test -f docs/contribution-guide.md
+          test -f docs/documentation-guide.md
+          test -f templates/scenario-template.md
+          test -f templates/incident-report-template.md
