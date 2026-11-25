@@ -22,7 +22,7 @@ Failure Simulation -> Forensic RCA -> Recovery Solutions -> Validation -> Preven
 | Category | Primary Focus | Reference / Key Scenarios |
 |---|---|---|
 | [database-failures/](./database-failures/) | Availability, replication, corruption, data loss | Accidental DB Deletion, Disk-Full Crash |
-| [server-failures/](./server-failures/) | OS stability, compute/memory exhaustion, storage | Disk Space Exhaustion, OOM Kill, High CPU |
+| [server-failures/](./server-failures/) | OS stability, compute/memory exhaustion, storage | [Disk Space Exhaustion](./server-failures/disk-space-exhaustion/), OOM Kill, High CPU |
 | [network-failures/](./network-failures/) | DNS, TLS expiry, firewall misconfigurations, routing | DNS Failure, TLS Expiry, Network Drops |
 | [application-failures/](./application-failures/) | Process crashes, API timeouts, memory leaks | App Startup Crash, Upstream Timeout |
 | [cloud-infrastructure/](./cloud-infrastructure/) | Containers, orchestrators, cloud storage | Docker Crash Loop, Kubernetes Pod Failure |
@@ -41,11 +41,11 @@ category-name/
     ├── README.md               # Overview, metadata, quick start
     ├── scenario.md             # Detailed incident narrative
     ├── architecture.md         # System topology and components
-    ├── simulation/             # Setup, failure injection, and teardown
-    ├── root-cause-analysis/    # Log evidence, timeline, root cause
-    ├── solutions/              # Manual runbooks & automated recovery scripts
-    ├── testing/                # Post-recovery health & data integrity tests
-    ├── prevention/             # Architectural guardrails & monitoring alerts
+    ├── 01-simulation/          # Setup, failure injection, and teardown
+    ├── 02-root-cause-analysis/ # Log evidence, timeline, root cause
+    ├── 03-solutions/           # Manual runbooks & automated recovery scripts
+    ├── 04-testing/             # Post-recovery health & data integrity tests
+    ├── 05-prevention/          # Architectural guardrails & monitoring alerts
     └── screenshots/            # Visual artifacts and terminal captures
 ```
 

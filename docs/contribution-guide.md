@@ -25,12 +25,12 @@ To be marked as complete, a scenario must satisfy:
    - Choose the relevant category folder (`database-failures/`, `server-failures/`, etc.).
    - Follow the structure in `templates/scenario-template.md`.
 3. **Build the Simulation:**
-   - Include `simulation/setup.sh`, `simulation/reproduce-failure.sh`, and `simulation/teardown.sh`.
+   - Include `01-simulation/setup.sh`, `01-simulation/reproduce-failure.sh`, and `01-simulation/teardown.sh`.
    - Provide a clean `docker-compose.yml` or container spec with pinned versions.
 4. **Provide Solutions & Automation:**
-   - Include manual runbooks and executable recovery scripts in `solutions/`.
+   - Include manual runbooks and executable recovery scripts in `03-solutions/`.
 5. **Write Validation Tests:**
-   - Ensure `testing/validation.sh` verifies both service availability and data integrity.
+   - Ensure `04-testing/validation.sh` verifies both service availability and data integrity.
 6. **Submit a Pull Request:**
    - Complete the PR template with reproduction steps and verification logs.
 

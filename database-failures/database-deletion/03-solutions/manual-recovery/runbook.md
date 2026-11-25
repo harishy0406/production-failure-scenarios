@@ -47,4 +47,4 @@ Query row counts:
 docker exec -it scenario-pg-deletion psql -U postgres -d production_db -c "SELECT COUNT(*) FROM customers; SELECT COUNT(*) FROM orders;"
 ```
 
-Proceed to run `./testing/validation.sh` for full data integrity verification.
+Proceed to run `./04-testing/validation.sh` for full data integrity verification.

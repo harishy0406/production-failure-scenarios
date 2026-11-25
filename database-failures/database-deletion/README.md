@@ -38,23 +38,23 @@ The environment simulates an application connected to a primary PostgreSQL conta
 ## 4. Quick Start
 1. **Initialize Sandbox:**
    ```bash
-   ./simulation/setup.sh
+   ./01-simulation/setup.sh
    ```
 2. **Simulate Accidental Deletion:**
    ```bash
-   ./simulation/reproduce-failure.sh
+   ./01-simulation/reproduce-failure.sh
    ```
 3. **Diagnose Incident:**
-   Follow root cause investigation steps in [analysis.md](root-cause-analysis/analysis.md).
+   Follow root cause investigation steps in [analysis.md](02-root-cause-analysis/analysis.md).
 4. **Execute Recovery:**
-   Follow the runbooks in `solutions/manual-recovery/` or run the automated recovery script in `solutions/automated-recovery/`.
+   Follow the runbooks in `03-solutions/manual-recovery/` or run the automated recovery script in `03-solutions/automated-recovery/`.
 5. **Validate Health & Data Integrity:**
    ```bash
-   ./testing/validation.sh
+   ./04-testing/validation.sh
    ```
 6. **Teardown Environment:**
    ```bash
-   ./simulation/teardown.sh
+   ./01-simulation/teardown.sh
    ```
 
 ## 5. Incident Description and Impact
