@@ -16,7 +16,7 @@ echo "Injecting failure: DROP DATABASE production_db; (Simulating operator error
 docker exec -i "$CONTAINER_NAME" psql -U postgres -c "DROP DATABASE production_db;"
 
 echo "Verifying failure state..."
-if docker exec "$CONTAINER_NAME" psql -U postgres -lqt | cut -d \| -f 1 | grep -qw "production_db"; then
+if docker exec "$CONTAINER_NAME" psql -U postgres -lqt | cut -d '|' -f 1 | grep -qw "production_db"; then
     echo "Unexpected: Database still exists!"
     exit 1
 else

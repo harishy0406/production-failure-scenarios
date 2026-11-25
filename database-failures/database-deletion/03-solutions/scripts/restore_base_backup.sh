@@ -12,7 +12,7 @@ if ! docker ps --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
 fi
 
 echo "=== [2/3] Checking and Recreating Database Shell ==="
-if ! docker exec "$CONTAINER_NAME" psql -U postgres -lqt | cut -d \| -f 1 | grep -qw "production_db"; then
+if ! docker exec "$CONTAINER_NAME" psql -U postgres -lqt | cut -d '|' -f 1 | grep -qw "production_db"; then
     echo "Creating empty production_db..."
     docker exec "$CONTAINER_NAME" psql -U postgres -c "CREATE DATABASE production_db;"
 fi

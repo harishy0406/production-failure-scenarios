@@ -9,9 +9,20 @@ echo "Checking target file: $TARGET_FILE"
 if [ ! -f "$TARGET_FILE" ]; then
     echo "Warning: $TARGET_FILE does not exist as a regular file."
     echo "Checking for open deleted file descriptors via /proc..."
-    
-    DELETED_FD=$(ls -l /proc/*/fd/* 2>/dev/null | grep "$TARGET_FILE (deleted)" | head -n 1 | awk '{print $9}' || true)
-    
+
+    DELETED_FD=""
+    for fd in /proc/[0-9]*/fd/*; do
+        if [ -e "$fd" ] || [ -L "$fd" ]; then
+            target=$(readlink "$fd" 2>/dev/null || true)
+            case "$target" in
+                *"$TARGET_FILE"*deleted*)
+                    DELETED_FD="$fd"
+                    break
+                    ;;
+            esac
+        fi
+    done
+
     if [ -n "$DELETED_FD" ]; then
         echo "Found deleted file handle at $DELETED_FD. Truncating directly..."
         : > "$DELETED_FD"
