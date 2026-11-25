@@ -34,23 +34,23 @@ Step-by-step instructions to run the scenario locally:
 
 1. **Setup Sandbox Environment:**
    ```bash
-   ./simulation/setup.sh
+   ./01-simulation/setup.sh
    ```
 2. **Inject / Reproduce Failure:**
    ```bash
-   ./simulation/reproduce-failure.sh
+   ./01-simulation/reproduce-failure.sh
    ```
 3. **Investigate & Diagnose:**
-   Follow the diagnostic steps in `root-cause-analysis/analysis.md`.
+   Follow the diagnostic steps in `02-root-cause-analysis/analysis.md`.
 4. **Execute Recovery:**
-   See `solutions/manual-recovery/` or run automated recovery in `solutions/automated-recovery/`.
+   See `03-solutions/manual-recovery/` or run automated recovery in `03-solutions/automated-recovery/`.
 5. **Validate Health & Data Integrity:**
    ```bash
-   ./testing/validation.sh
+   ./04-testing/validation.sh
    ```
 6. **Teardown Sandbox:**
    ```bash
-   ./simulation/teardown.sh
+   ./01-simulation/teardown.sh
    ```
 
 ## 5. Incident Description & Impact Assessment

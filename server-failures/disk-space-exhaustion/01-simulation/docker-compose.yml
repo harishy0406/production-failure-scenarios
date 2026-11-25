@@ -1,0 +1,12 @@
+services:
+  app:
+    image: python:3.11-alpine
+    container_name: scenario-disk-exhaustion
+    working_dir: /app
+    command: ["python", "-u", "app.py"]
+    # We mount a tiny 30MB tmpfs for logs.
+    # This prevents using real host disk space while still reproducing Linux ENOSPC.
+    tmpfs:
+      - /var/log/app:size=30M
+    volumes:
+      - ./app.py:/app/app.py:ro

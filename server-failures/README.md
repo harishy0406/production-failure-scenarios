@@ -10,10 +10,10 @@ Simulations and recovery patterns addressing host-level infrastructure, operatin
 - File permission and ACL misconfigurations
 
 ## Scenario Index
-| Scenario | Focus Tech | Severity | Status |
-|---|---|---|---|
-| Disk Space Exhaustion | Linux, ext4/xfs | P0 | Planned |
-| Out Of Memory (OOM) Kill | Linux, cgroups | P0 | Planned |
-| High CPU Saturation | Linux | P0 | Planned |
-| Critical Daemon Termination | systemd, Linux | P1 | Planned |
-| Filesystem Corruption & Read-Only Remount | Linux kernel | P2 | Planned |
+| Scenario | Focus Tech | Severity | Status | Path |
+|---|---|---|---|---|
+| Disk Space Exhaustion | Linux, Docker, Python | P0 | Draft | [disk-space-exhaustion](./disk-space-exhaustion/) |
+| Out Of Memory (OOM) Kill | Linux, cgroups | P0 | Planned | `oom-kill` |
+| High CPU Saturation | Linux | P0 | Planned | `high-cpu` |
+| Critical Daemon Termination | systemd, Linux | P1 | Planned | `daemon-termination` |
+| Filesystem Corruption & Read-Only Remount | Linux kernel | P2 | Planned | `fs-corruption` |
