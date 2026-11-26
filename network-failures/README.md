@@ -10,9 +10,9 @@ Case studies addressing network routing breakdowns, transport security lapses, t
 - Packet loss, latency degradation, and MTU issues
 
 ## Scenario Index
-| Scenario | Focus Tech | Severity | Status |
-|---|---|---|---|
-| DNS Resolution Failure | CoreDNS / BIND | P1 | Planned |
-| TLS Certificate Expiry | OpenSSL, Nginx | P1 | Planned |
-| Firewall Misconfiguration | iptables / nftables | P1 | Planned |
-| Reverse Proxy Upstream Dropping | Nginx / HAProxy | P2 | Planned |
+| Scenario | Focus Tech | Severity | Status | Path |
+|---|---|---|---|---|
+| TLS Certificate Expiry | OpenSSL, Nginx, Docker | P1 | Draft | [tls-cert-expiry](./tls-cert-expiry/) |
+| DNS Resolution Failure | CoreDNS / BIND | P1 | Planned | `dns-resolution-failure` |
+| Firewall Misconfiguration | iptables / nftables | P1 | Planned | `firewall-misconfiguration` |
+| Reverse Proxy Upstream Dropping | Nginx / HAProxy | P2 | Planned | `reverse-proxy-dropping` |

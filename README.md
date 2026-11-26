@@ -23,7 +23,7 @@ Failure Simulation -> Forensic RCA -> Recovery Solutions -> Validation -> Preven
 |---|---|---|
 | [database-failures/](./database-failures/) | Availability, replication, corruption, data loss | Accidental DB Deletion, Disk-Full Crash |
 | [server-failures/](./server-failures/) | OS stability, compute/memory exhaustion, storage | [Disk Space Exhaustion](./server-failures/disk-space-exhaustion/), OOM Kill, High CPU |
-| [network-failures/](./network-failures/) | DNS, TLS expiry, firewall misconfigurations, routing | DNS Failure, TLS Expiry, Network Drops |
+| [network-failures/](./network-failures/) | DNS, TLS expiry, firewall misconfigurations, routing | [TLS Certificate Expiry](./network-failures/tls-cert-expiry/), DNS Failure |
 | [application-failures/](./application-failures/) | Process crashes, API timeouts, memory leaks | App Startup Crash, Upstream Timeout |
 | [cloud-infrastructure/](./cloud-infrastructure/) | Containers, orchestrators, cloud storage | Docker Crash Loop, Kubernetes Pod Failure |
 | [security-incidents/](./security-incidents/) | Leaked credentials, misconfigured IAM, containment | Credential Leakage, Over-Permissive Roles |
