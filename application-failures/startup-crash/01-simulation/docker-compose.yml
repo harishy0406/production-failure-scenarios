@@ -1,0 +1,13 @@
+services:
+  api:
+    image: python:3.11-alpine
+    container_name: scenario-startup-crash
+    working_dir: /app
+    command: ["python", "-u", "app.py"]
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app.py:/app/app.py:ro
+    restart: on-failure:5
